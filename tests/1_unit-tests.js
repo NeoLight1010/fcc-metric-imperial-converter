@@ -70,13 +70,57 @@ suite('Unit Tests', function(){
     });
 
     suite('convertHandler spellOutUnit()', () => {
-           test('All valid units', () => {
-               assert.equal(convertHandler.spellOutUnit('gal'), 'gallons');
-               assert.equal(convertHandler.spellOutUnit('L'), 'liters');
-               assert.equal(convertHandler.spellOutUnit('mi'), 'miles');
-               assert.equal(convertHandler.spellOutUnit('km'), 'kilometers');
-               assert.equal(convertHandler.spellOutUnit('lbs'), 'pounds');
-               assert.equal(convertHandler.spellOutUnit('kg'), 'kilograms');
-           })
+        test('All valid units', () => {
+            assert.equal(convertHandler.spellOutUnit('gal'), 'gallons');
+            assert.equal(convertHandler.spellOutUnit('L'), 'liters');
+            assert.equal(convertHandler.spellOutUnit('mi'), 'miles');
+            assert.equal(convertHandler.spellOutUnit('km'), 'kilometers');
+            assert.equal(convertHandler.spellOutUnit('lbs'), 'pounds');
+            assert.equal(convertHandler.spellOutUnit('kg'), 'kilograms');
+        });
+    });
+
+    suite('converthandler convert()', () => {
+        test('gal to L', () => {
+            num = 24.6;
+            unit = 'gal';
+            expected = 93.12109;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
+
+       test('L to gal', () => {
+            num = 6;
+            unit = 'L';
+            expected = 1.58503;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
+
+        test('mi to km', () => {
+            num = 1.5;
+            unit = 'mi';
+            expected = 2.57494;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
+
+        test('km to mi', () => {
+            num = 1.6;
+            unit = 'km';
+            expected = 0.99420;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
+
+        test('lbs to kg', () => {
+            num = 9;
+            unit = 'lbs';
+            expected = 4.08233;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
+        
+        test('kg to lbs', () => {
+            num = 7;
+            unit = 'kg';
+            expected = 15.43237;
+            assert.equal(convertHandler.convert(num, unit), expected);
+        });
     });
 });
