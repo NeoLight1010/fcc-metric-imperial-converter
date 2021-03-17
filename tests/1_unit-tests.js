@@ -56,5 +56,16 @@ suite('Unit Tests', function(){
         test('Invalid unit', () => {
             assert.equal(convertHandler.getUnit('64xis'), convertHandler.invalid_unit);
         });
-    })
+    });
+
+    suite('convertHandler getReturnUnit()', () => {
+        test('All valid units', () => {
+            assert.equal(convertHandler.getReturnUnit('gal'), 'L');
+            assert.equal(convertHandler.getReturnUnit('L'), 'gal');
+            assert.equal(convertHandler.getReturnUnit('mi'), 'km');
+            assert.equal(convertHandler.getReturnUnit('km'), 'mi');
+            assert.equal(convertHandler.getReturnUnit('lbs'), 'kg');
+            assert.equal(convertHandler.getReturnUnit('kg'), 'lbs');
+        });
+    });
 });
