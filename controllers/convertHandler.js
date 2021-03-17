@@ -1,5 +1,9 @@
 function ConvertHandler() {
   
+  this.invalid_number = "invalid number";
+  this.invalid_unit = "invalid unit";
+  this.invalid_number_and_unit = "invalid number and unit";
+
   this.getNum = function(input) {
     let result;
     
