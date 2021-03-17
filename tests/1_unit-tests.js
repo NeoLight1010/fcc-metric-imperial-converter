@@ -42,4 +42,19 @@ suite('Unit Tests', function(){
             assert.equal(convertHandler.getNum(input), expected);
         });
     });
+
+    suite('convertHandler getUnit()', () => {
+        test('All valid units', () => {
+            assert.equal(convertHandler.getUnit('24gal'), 'gal');
+            assert.equal(convertHandler.getUnit('24L'), 'L');
+            assert.equal(convertHandler.getUnit('24mi'), 'mi');
+            assert.equal(convertHandler.getUnit('24km'), 'km');
+            assert.equal(convertHandler.getUnit('24lbs'), 'lbs');
+            assert.equal(convertHandler.getUnit('24kg'), 'kg');
+        });
+
+        test('Invalid unit', () => {
+            assert.equal(convertHandler.getUnit('64xis'), convertHandler.invalid_unit);
+        });
+    })
 });
