@@ -93,8 +93,30 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    let result;
     
+    switch(initUnit) {
+      case 'gal':
+        return Math.round(initNum * galToL * 100000) / 100000;
+        break;
+      case 'L':
+        return Math.round(initNum / galToL * 100000) / 100000;
+        break;
+      case 'mi':
+        return Math.round(initNum * miToKm * 100000) / 100000;
+        break;
+      case 'km':
+        return Math.round(initNum / miToKm * 100000) / 100000;
+        break;
+      case 'lbs':
+        return Math.round(initNum * lbsToKg * 100000) / 100000;
+        break;
+      case 'kg':
+        return Math.round(initNum / lbsToKg * 100000) / 100000;
+        break;
+      default:
+        return this.i;
+    } 
+
     return result;
   };
   

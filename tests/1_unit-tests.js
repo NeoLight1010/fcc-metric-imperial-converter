@@ -98,7 +98,7 @@ suite('Unit Tests', function(){
         test('mi to km', () => {
             num = 1.5;
             unit = 'mi';
-            expected = 2.57494;
+            expected = 2.41401;
             assert.equal(convertHandler.convert(num, unit), expected);
         });
 
