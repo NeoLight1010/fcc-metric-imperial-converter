@@ -114,7 +114,7 @@ function ConvertHandler() {
         return Math.round(initNum / lbsToKg * 100000) / 100000;
         break;
       default:
-        return this.i;
+        return this.invalid_unit;
     } 
 
     return result;
