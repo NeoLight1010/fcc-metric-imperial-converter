@@ -1,5 +1,6 @@
 function ConvertHandler() {
-  
+  this.units = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
+
   this.invalid_number = "invalid number";
   this.invalid_unit = "invalid unit";
   this.invalid_number_and_unit = "invalid number and unit";
@@ -29,6 +30,12 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     let result;
     
+    const nonDigitIndex = input.search(/[^0-9/.]/);
+    const foundUnit = input.slice(nonDigitIndex);
+
+    if (this.units.includes(foundUnit)) result = foundUnit;
+    else result = this.invalid_unit;
+
     return result;
   };
   
