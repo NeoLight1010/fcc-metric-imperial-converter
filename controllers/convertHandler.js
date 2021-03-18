@@ -65,9 +65,28 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
-    let result;
-    
-    return result;
+    switch(unit) {
+      case 'gal':
+        return 'gallons';
+        break;
+      case 'L':
+        return 'liters';
+        break;
+      case 'mi':
+        return 'miles';
+        break;
+      case 'km':
+        return 'kilometers';
+        break;
+      case 'lbs':
+        return 'pounds';
+        break;
+      case 'kg':
+        return 'kilograms';
+        break;
+      default:
+        return this.invalid_unit;
+    }
   };
   
   this.convert = function(initNum, initUnit) {
