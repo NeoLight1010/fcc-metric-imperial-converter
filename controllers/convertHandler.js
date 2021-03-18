@@ -40,9 +40,28 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    let result;
-    
-    return result;
+    switch(initUnit) {
+      case 'gal':
+        return 'L';
+        break;
+      case 'L':
+        return 'gal';
+        break;
+      case 'mi':
+        return 'km';
+        break;
+      case 'km':
+        return 'mi';
+        break;
+      case 'lbs':
+        return 'kg';
+        break;
+      case 'kg':
+        return 'lbs';
+        break;
+      default:
+        return this.invalid_unit;
+    }
   };
 
   this.spellOutUnit = function(unit) {
