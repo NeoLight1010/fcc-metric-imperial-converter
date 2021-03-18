@@ -6,7 +6,23 @@ function ConvertHandler() {
 
   this.getNum = function(input) {
     let result;
+
+    const nonDigitIndex = input.search(/[^0-9/.]/);
+    const numberOfFractions = (input.match(/[/]/g) || []).length
     
+    if (nonDigitIndex == 0) {
+      result = 1;
+    } else {
+      try {
+        result = Function(`return ${input.slice(0, nonDigitIndex)}`)();
+      }
+      catch(err) {
+        result = this.invalid_number;
+      }
+    }
+
+    if (numberOfFractions > 1) result = this.invalid_number;
+
     return result;
   };
   
