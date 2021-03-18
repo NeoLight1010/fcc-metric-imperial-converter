@@ -43,22 +43,22 @@ function ConvertHandler() {
     switch(initUnit) {
       case 'gal':
         return 'L';
-        break;
+        
       case 'L':
         return 'gal';
-        break;
+        
       case 'mi':
         return 'km';
-        break;
+        
       case 'km':
         return 'mi';
-        break;
+        
       case 'lbs':
         return 'kg';
-        break;
+        
       case 'kg':
         return 'lbs';
-        break;
+        
       default:
         return this.invalid_unit;
     }
@@ -68,22 +68,22 @@ function ConvertHandler() {
     switch(unit) {
       case 'gal':
         return 'gallons';
-        break;
+        
       case 'L':
         return 'liters';
-        break;
+        
       case 'mi':
         return 'miles';
-        break;
+        
       case 'km':
         return 'kilometers';
-        break;
+        
       case 'lbs':
         return 'pounds';
-        break;
+        
       case 'kg':
         return 'kilograms';
-        break;
+        
       default:
         return this.invalid_unit;
     }
@@ -97,22 +97,22 @@ function ConvertHandler() {
     switch(initUnit) {
       case 'gal':
         return Math.round(initNum * galToL * 100000) / 100000;
-        break;
+        
       case 'L':
         return Math.round(initNum / galToL * 100000) / 100000;
-        break;
+        
       case 'mi':
         return Math.round(initNum * miToKm * 100000) / 100000;
-        break;
+        
       case 'km':
         return Math.round(initNum / miToKm * 100000) / 100000;
-        break;
+        
       case 'lbs':
         return Math.round(initNum * lbsToKg * 100000) / 100000;
-        break;
+        
       case 'kg':
         return Math.round(initNum / lbsToKg * 100000) / 100000;
-        break;
+        
       default:
         return this.invalid_unit;
     } 
