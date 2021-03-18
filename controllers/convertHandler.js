@@ -116,8 +116,6 @@ function ConvertHandler() {
       default:
         return this.invalid_unit;
     } 
-
-    return result;
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
